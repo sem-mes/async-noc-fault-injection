@@ -1,0 +1,14 @@
+# Icarus Verilog / VVP compiled files
+*.vvp
+*.out
+*.bin
+sim_*
+
+# Simulation waveform files
+*.vcd
+*.lxt
+*.lxt2
+*.fst
+
+# GTKWave save files 
+# *.gtkw
