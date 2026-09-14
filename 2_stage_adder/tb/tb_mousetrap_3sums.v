@@ -59,6 +59,10 @@ module tb_mousetrap_3sums;
     endtask
 
     initial begin
+	
+		$dumpfile("mousetrap_waves.vcd"); // Specifica il nome del file da generare
+        $dumpvars(0, tb_mousetrap_3sums); // Registra tutti i segnali di questo modulo e dei sottomoduli
+	
         // ---- Inizializzazione della pipeline (non e' iniezione di guasti) ----
         A0 = 0; B0 = 0; A1 = 0; B1 = 0; req_in = 0; ack_out = 0;
         force dut.en_1 = 1'b1;

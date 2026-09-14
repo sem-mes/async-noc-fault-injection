@@ -1,4 +1,3 @@
-`timescale 1ns/1ps
 // mousetrap_pipeline_2stage.v
 //
 // Pipeline asincrona MOUSETRAP a 2 stadi:
