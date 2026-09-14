@@ -9,4 +9,5 @@
 - Modello Strutturale: Rimosso il force, il Latch guarisce istantaneamente. Le porte logiche valutano continuamente i livelli elettrici in tempo reale; non appena il filo viene liberato, il valore corretto presente sull'ingresso D si propaga nuovamente all'uscita, schiacciando l'errore.
 - Modello Comportamentale (Guasto Fantasma): Il Latch rimane incorrettamente incantato sul valore errato. Il costrutto always @(*) è event-driven: si riattiva solo in presenza di variazioni effettive (transizioni) sui fili di ingresso. Il comando release nel testbench non costituisce un evento. Senza una nuova variazione di D o EN, il blocco non viene rieseguito e l'uscita non si aggiorna, sovrastimando di fatto la letalità del guasto.
 
+
 <img width="987" height="262" alt="image" src="https://github.com/user-attachments/assets/0c6cc418-cd79-4cd3-927d-f05dedc349ab" />
