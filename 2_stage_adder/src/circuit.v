@@ -1,4 +1,3 @@
-`timescale 1ps / 1ps
 
 module mousetrap_pipeline_top #(
     parameter DELAY_STAGE1 = 5, 
