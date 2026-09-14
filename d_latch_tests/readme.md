@@ -1,6 +1,6 @@
 **Fase di Hold (EN = 0) - Comportamento Identico**
 
-- Memorizzazione Permanente: Al momento del release, entrambi i modelli intrappolano il guasto, mantenendo l'uscita stabilmente sul valore errato.
+- Memorizzazione Permanente: Al momento del release, entrambi i modelli intrappolano il guasto, mantenendo l'uscita stabilmente sul valore forzato.
 - Dinamica Strutturale: L'anello di retroazione delle porte logiche NAND incrociate reagisce al cambio di tensione forzato, ribalta il proprio stato interno e stabilizza fisicamente l'errore come se fosse stato campionato.
 - Dinamica Comportamentale: La variabile di programmazione reg conserva passivamente l'ultimo valore forzato. Poiché la condizione di abilitazione è falsa, il blocco non tenta di aggiornare l'uscita.
 
