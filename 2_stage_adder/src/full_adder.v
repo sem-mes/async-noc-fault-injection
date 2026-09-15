@@ -1,12 +1,10 @@
 `timescale 1ns/1ps
-// full_adder.v
-// Full adder a 1 bit - implementazione STRUTTURALE (gate-level)
-//
+
 //   S    = A xor B xor Cin
 //   Cout = (A and B) or (Cin and (A xor B))
 
 module full_adder #(
-    parameter tPD_XOR = 1, // ritardo delle porte XOR (unita' di tempo arbitrarie)
+    parameter tPD_XOR = 1, // ritardo delle porte XOR
     parameter tPD_AND = 1, // ritardo delle porte AND
     parameter tPD_OR  = 1  // ritardo della porta OR
 ) (
@@ -17,7 +15,7 @@ module full_adder #(
     output wire Cout
 );
 
-    wire axb;          // A xor B
+    wire axb;          	// A xor B
     wire a_and_b;       // A and B
     wire axb_and_cin;   // (A xor B) and Cin
 
@@ -29,8 +27,3 @@ module full_adder #(
     or  #(tPD_OR)  g5 (Cout, a_and_b, axb_and_cin);
 
 endmodule
-
-// Nota per la STA (con Cin proveniente da un latch e quindi "stabile" non
-// dopo A,B): il percorso critico verso Cout e' A/B -> axb -> axb_and_cin -> Cout:
-//   t_FA(Cin->Cout) = tPD_AND + tPD_OR
-//   t_FA(A/B->Cout) = tPD_XOR + tPD_AND + tPD_OR

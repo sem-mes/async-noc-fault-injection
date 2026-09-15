@@ -1,7 +1,4 @@
 `timescale 1ns/1ps
-// adder_3bit.v
-// Adder a 3 bit (ripple carry) - implementazione STRUTTURALE
-// Richiede full_adder.v nello stesso progetto di compilazione
 
 module adder_3bit #(
     parameter tPD_XOR = 1,
@@ -26,5 +23,4 @@ module adder_3bit #(
 
 endmodule
 
-// STA: percorso critico verso Cout finale:
-//   T_3bit = tPD_XOR + 3*(tPD_AND + tPD_OR)
+// STA: T_3bit = tPD_XOR + 3*(tPD_AND + tPD_OR)

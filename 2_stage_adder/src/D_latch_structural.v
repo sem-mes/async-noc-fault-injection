@@ -1,17 +1,11 @@
 `timescale 1ns/1ps
-// D_latch_structural.v
-// D-latch trasparente - implementazione STRUTTURALE con porte NAND + inverter
-//
 // Funzionamento:
-//   EN = 1 -> Q segue D (latch trasparente)
-//   EN = 0 -> Q mantiene il valore precedente (memoria)
-//
-// Struttura classica: 2 NAND generano S' e R' a partire da D e EN,
-// che pilotano un latch SR realizzato con 2 NAND incrociate.
+//   EN = 1 -> Q segue D 
+//   EN = 0 -> Q mantiene il valore precedente
 
 module D_latch_structural #(
-    parameter tPD_NOT  = 1, // ritardo dell'inverter (unita' di tempo arbitrarie)
-    parameter tPD_NAND = 1  // ritardo di ciascuna NAND (unita' di tempo arbitrarie)
+    parameter tPD_NOT  = 1, // ritardo dell'inverter 
+    parameter tPD_NAND = 1  // ritardo di ciascuna NAND 
 ) (
     input  wire D,
     input  wire EN,
@@ -33,6 +27,4 @@ module D_latch_structural #(
 
 endmodule
 
-// Nota per la STA: il percorso combinatorio D -> Q (a latch gia' trasparente,
-// cioe' con Qbar assestato) attraversa 2 NAND (n2, n4):
-//   t_Lt = 2 * tPD_NAND
+// STA: t_Lt = 2 * tPD_NAND
